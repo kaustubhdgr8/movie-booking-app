@@ -17,11 +17,12 @@
     </template>
 
     <template v-slot:modal-footer="{ ok, cancel }">
-      <b-button
-        variant="outline-primary"
-        @click="openLoginForm(cancel)"
-      >{{$t('register.button.login')}}</b-button>
-      <b-button variant="primary">{{$t('register.button.register')}}</b-button>
+      <b-button variant="outline-primary" @click="openLoginForm(cancel)">{{
+        $t("register.button.login")
+      }}</b-button>
+      <b-button variant="primary">{{
+        $t("register.button.register")
+      }}</b-button>
     </template>
   </b-modal>
 </template>

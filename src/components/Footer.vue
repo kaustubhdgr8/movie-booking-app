@@ -4,16 +4,16 @@
     <div class="container my-md-4">
       <div class="row">
         <div class="col-sm-12 col-md-3">
-          <a to="about-us">About us</a>
+          <router-link to="about-us">About us</router-link>
         </div>
         <div class="col-sm-12 col-md-3">
-          <a to="contact-us">Contact us</a>
+          <router-link to="contact-us">Contact us</router-link>
         </div>
         <div class="col-sm-12 col-md-3">
-          <a to="help">Help</a>
+          <router-link to="help">Help</router-link>
         </div>
         <div class="col-sm-12 col-md-3">
-          <a to="catalog">Catalog</a>
+          <router-link to="catalog">Catalog</router-link>
         </div>
       </div>
     </div>

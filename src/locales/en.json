@@ -1,20 +1,37 @@
 {
-  "menu.brand.company_name": "It's Showtime!",
-  "menu.options.shows": "Movies",
-  "menu.options.login": "Login",
-  "menu.options.register": "Register",
-  "menu.options.profile": "Profile",
-  "menu.options.logout": "Signout",
-  "login.title": "Enter your credentials",
-  "login.email.label": "Email address",
-  "login.email.placeholder": "Enter your email address",
-  "login.password.label": "Password",
-  "login.password.placeholder": "Enter your password",
-  "login.forgot_password.label": "Forgot password?",
-  "login.remember_me.label": "Remember my details",
-  "login.button.register": "Not registered? Click here",
-  "login.button.login": "Login",
-  "register.title": "Enter your details",
-  "register.button.login": "Already registered? Click here",
-  "register.button.register": "Register now"
+  "menu": {
+    "company_name": "It's Showtime!",
+    "options": {
+      "shows": "Movies",
+      "theaters": "Theaters",
+      "login": "Login",
+      "register": "Register",
+      "profile": "Profile",
+      "logout": "Signout"
+    }
+  },
+  "login": {
+    "title": "Enter your credentials",
+    "email": {
+      "label": "Email address",
+      "placeholder": "Enter your email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "forgot_password": "Forgot password?"
+    },
+    "remember_me": "Remember my details",
+    "button": {
+      "register": "Not registered? Click here",
+      "login": "Login"
+    }
+  },
+  "register": {
+    "title": "Enter your details",
+    "button": {
+      "login": "Already registered? Click here",
+      "register": "Register now"
+    }
+  }
 }

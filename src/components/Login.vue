@@ -38,7 +38,9 @@
             v-model="formData.password"
           ></b-form-input>
         </b-form-group>
-        <b-link to="forgot-password">{{$t('login.forgot_password.label')}}</b-link>
+        <b-link to="forgot-password">{{
+          $t("login.password.forgot_password")
+        }}</b-link>
       </b-form>
     </template>
 
@@ -46,8 +48,11 @@
       <b-button
         variant="outline-primary"
         @click="openRegistrationForm(cancel)"
-      >{{$t('login.button.register')}}</b-button>
-      <b-button variant="primary" @click="login(ok)">{{$t('login.button.login')}}</b-button>
+        >{{ $t("login.button.register") }}</b-button
+      >
+      <b-button variant="primary" @click="login(ok)">{{
+        $t("login.button.login")
+      }}</b-button>
     </template>
   </b-modal>
 </template>

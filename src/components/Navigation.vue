@@ -1,11 +1,26 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="dark" :sticky="true" role="nav">
-      <b-navbar-brand to="/">{{$t('menu.brand.company_name')}}</b-navbar-brand>
+    <b-navbar
+      toggleable="lg"
+      type="dark"
+      variant="dark"
+      :sticky="true"
+      role="nav"
+    >
+      <b-navbar-brand to="/">
+        <img
+          src="../assets/logo.png"
+          :alt="$t('menu.company_name')"
+          class="brand_logo"
+        />
+      </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="shows">{{$t('menu.options.shows')}}</b-nav-item>
+          <b-nav-item to="shows">{{ $t("menu.options.shows") }}</b-nav-item>
+          <b-nav-item to="theaters">{{
+            $t("menu.options.theaters")
+          }}</b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown :text="selectedLanguage" right>
@@ -14,23 +29,33 @@
               :key="index"
               :value="lang.code"
               @click="changeLanguage(index)"
-            >{{lang.name}}</b-dropdown-item>
+              >{{ lang.name }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
           <b-button-group class="ml-2" v-if="!isLoggedIn">
             <b-button
               variant="outline-light"
               v-b-modal.login_modal
               ref="loginButton"
-            >{{$t('menu.options.login')}}</b-button>
+              >{{ $t("menu.options.login") }}</b-button
+            >
             <b-button
               variant="outline-light"
               v-b-modal.register_modal
               ref="registerButton"
-            >{{$t('menu.options.register')}}</b-button>
+              >{{ $t("menu.options.register") }}</b-button
+            >
           </b-button-group>
-          <b-nav-item-dropdown right v-if="isLoggedIn" class="m-md-2" :text="userName">
-            <b-dropdown-item href="#">{{$t('menu.options.profile')}}</b-dropdown-item>
-            <b-dropdown-item>{{$t('menu.options.logout')}}</b-dropdown-item>
+          <b-nav-item-dropdown
+            right
+            v-if="isLoggedIn"
+            class="m-md-2"
+            :text="userName"
+          >
+            <b-dropdown-item href="#">{{
+              $t("menu.options.profile")
+            }}</b-dropdown-item>
+            <b-dropdown-item>{{ $t("menu.options.logout") }}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -49,7 +74,7 @@ export default {
   data() {
     return {
       Languages,
-      selectedLanguage: "English",
+      selectedLanguage: '',
       isLoggedIn: false,
       userName: ""
     };
@@ -62,6 +87,7 @@ export default {
     changeLanguage(index) {
       this.$i18n.locale = this.Languages[index].code;
       this.selectedLanguage = this.Languages[index].name;
+      localStorage.setItem('lang', this.$i18n.locale);
     },
     openOtherAuthForm(componentName) {
       if (componentName === "appLogin") {
@@ -70,6 +96,20 @@ export default {
         this.$refs.registerButton.click();
       }
     }
+  },
+  mounted() {
+    for (const lang of Languages) {
+      if (lang.code === this.$i18n.locale) {
+        this.selectedLanguage = lang.name;
+        break;
+      }
+    }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.brand_logo {
+  width: 150px;
+}
+</style>
